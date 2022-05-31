@@ -37,3 +37,5 @@ jobs:
           ls -la
       - name: external step
         uses: ./
+        with:
+          who-to-greet: 'Mona the Octocat'
