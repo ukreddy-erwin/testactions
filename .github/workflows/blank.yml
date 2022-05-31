@@ -36,4 +36,4 @@ jobs:
           echo test, and deploy your project.
           ls -la
       - name: external step
-        uses: ./action.yml
+        uses: ./
