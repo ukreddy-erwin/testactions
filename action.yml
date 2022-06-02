@@ -21,6 +21,8 @@ runs:
       run: |
         echo "userfulname=${{ inputs.userfulname }}" >> $GITHUB_ENV
         echo "who-to-greet=${{ inputs.who-to-greet }}" >> $GITHUB_ENV
+    - run: echo powershell Hello ${{ inputs.who-to-greet }}
+      shell: powershell
     - run: echo Hello ${{ inputs.who-to-greet }}.
       shell: bash
     - id: random-number-generator
