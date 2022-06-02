@@ -1,2 +1,3 @@
 echo "Goodbye"
-echo $userfulname
+echo ${{ inputs.who-to-greet }}
+echo ${{ inputs.userfulname }}
