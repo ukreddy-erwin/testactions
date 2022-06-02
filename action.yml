@@ -13,12 +13,14 @@ outputs:
   random-number:
     description: "Random number"
     value: ${{ steps.random-number-generator.outputs.random-number }}
-env:
-  userfulname: ${{ inputs.userfulname }}
-  who-to-greet: ${{ inputs.who-to-greet }}
 runs:
   using: "composite"
   steps:
+    - name: "Set extra variables"
+      shell: bash
+      run: |
+        echo "userfulname=${{ inputs.userfulname }}" >> $GITHUB_ENV
+        echo "who-to-greet=${{ inputs.who-to-greet }}" >> $GITHUB_ENV
     - run: echo Hello ${{ inputs.who-to-greet }}.
       shell: bash
     - id: random-number-generator
