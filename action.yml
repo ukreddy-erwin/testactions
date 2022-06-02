@@ -13,6 +13,9 @@ outputs:
   random-number:
     description: "Random number"
     value: ${{ steps.random-number-generator.outputs.random-number }}
+env:
+  userfulname: ${{ inputs.userfulname }}
+  who-to-greet: ${{ inputs.who-to-greet }}
 runs:
   using: "composite"
   steps:
